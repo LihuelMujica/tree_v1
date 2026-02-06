@@ -34,7 +34,8 @@
   }
 
   body {
-    @apply bg-spaceDark text-foreground;
+    background-color: #050510;
+    color: hsl(var(--foreground));
     font-family: 'Space Mono', monospace;
     overflow-x: hidden;
   }
