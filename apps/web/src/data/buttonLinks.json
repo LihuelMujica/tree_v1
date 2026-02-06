@@ -1,0 +1,14 @@
+{
+  "retroButtons": [
+    { "label": "MY STORE", "link": "#" },
+    { "label": "INSPIRATION", "link": "#" },
+    { "label": "STOCKLIST", "link": "#" },
+    { "label": "CONTACT", "link": "#" }
+  ],
+  "retroSocialButtons": [
+    { "label": "MY STORE", "color": "retroYellow", "hex": "#FFD700", "link": "#" },
+    { "label": "INSPIRATION", "color": "retroCyan", "hex": "#00FFFF", "link": "#" },
+    { "label": "STOCKLIST", "color": "retroMagenta", "hex": "#FF00FF", "link": "#" },
+    { "label": "CONTACT", "color": "retroWhite", "hex": "#FFFFFF", "link": "#" }
+  ]
+}
