@@ -5,9 +5,9 @@
     { "label": "C A R E T A S", "link": "https://lihuelmujica.github.io/host/" }
   ],
   "retroSocialButtons": [
-    { "label": "MY STORE", "color": "retroYellow", "hex": "#FFD700", "link": "#" },
-    { "label": "INSPIRATION", "color": "retroCyan", "hex": "#00FFFF", "link": "#" },
-    { "label": "STOCKLIST", "color": "retroMagenta", "hex": "#FF00FF", "link": "#" },
-    { "label": "CONTACT", "color": "retroWhite", "hex": "#FFFFFF", "link": "#" }
+    { "label": "GITHUB", "color": "retroYellow", "hex": "#FFD700", "link": "https://github.com/lihuelmujica" },
+    { "label": "LINKEDIN", "color": "retroCyan", "hex": "#00FFFF", "link": "https://linkedin.com" },
+    { "label": "SPOTIFY", "color": "retroMagenta", "hex": "#FF00FF", "link": "https://spotify.com" },
+    { "label": "INSTAGRAM", "color": "retroWhite", "hex": "#FFFFFF", "link": "https://instagram.com" }
   ]
 }
