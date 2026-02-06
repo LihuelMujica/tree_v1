@@ -1,14 +1,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import buttonLinks from '../data/buttonLinks.json';
 
 function RetroSocialSection() {
-  const buttons = [
-    { label: 'MY STORE', color: 'retroYellow', hex: '#FFD700', link: '#' },
-    { label: 'INSPIRATION', color: 'retroCyan', hex: '#00FFFF', link: '#' },
-    { label: 'STOCKLIST', color: 'retroMagenta', hex: '#FF00FF', link: '#' },
-    { label: 'CONTACT', color: 'retroWhite', hex: '#FFFFFF', link: '#' },
-  ];
+  const { retroSocialButtons } = buttonLinks;
 
   return (
     <section className="py-20 px-4 bg-spaceDark relative overflow-hidden">
@@ -26,7 +22,7 @@ function RetroSocialSection() {
       ></div>
 
       <div className="max-w-3xl mx-auto relative z-10 flex flex-col gap-6">
-        {buttons.map((btn, index) => (
+        {retroSocialButtons.map((btn, index) => (
           <motion.a
             key={btn.label}
             href={btn.link}
