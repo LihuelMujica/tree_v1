@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-spaceDark text-foreground;
+    font-family: 'Space Mono', monospace;
+    overflow-x: hidden;
+  }
+  
+  /* Scrollbar styling for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050510; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333; 
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+}
+
+@layer utilities {
+  .text-glow-yellow {
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+  }
+  
+  .box-glow-yellow {
+    box-shadow: 0 0 10px #FFD700, inset 0 0 10px rgba(255, 215, 0, 0.2);
+  }
+  .box-glow-cyan {
+    box-shadow: 0 0 10px #00FFFF, inset 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  .box-glow-magenta {
+    box-shadow: 0 0 10px #FF00FF, inset 0 0 10px rgba(255, 0, 255, 0.2);
+  }
+
+  .retro-border {
+    border: 2px solid;
+    border-radius: 0;
+  }
+
+  .animate-hue-cycle {
+    animation: hue-cycle 10s linear infinite;
+  }
+}
+
+@keyframes hue-cycle {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Star Animation Helper */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle var(--duration, 2s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}

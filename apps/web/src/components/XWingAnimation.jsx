@@ -1,0 +1,99 @@
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { neonStyles } from './NeonGlow';
+
+function XWingAnimation() {
+  return (
+    <div className="relative w-64 h-40 flex items-center justify-center">
+      {/* Floating Container */}
+      <motion.div
+        animate={{
+          y: [-8, 8, -8],
+          rotate: [-1, 1, -1]
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="relative z-10 will-change-transform"
+      >
+        {/* Retro Pixel Art X-Wing SVG */}
+        <svg 
+          width="120" 
+          height="80" 
+          viewBox="0 0 60 40" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          shapeRendering="crispEdges"
+        >
+          {/* Main Body */}
+          <rect x="20" y="15" width="30" height="10" fill="#E0E0E0" />
+          <rect x="50" y="17" width="10" height="6" fill="#A0A0A0" />
+          
+          {/* Cockpit */}
+          <rect x="30" y="12" width="10" height="3" fill="#333" />
+          
+          {/* Wings (Top) */}
+          <rect x="10" y="5" width="20" height="10" fill="#E0E0E0" />
+          <rect x="5" y="5" width="5" height="20" fill="#C0C0C0" />
+          <rect x="5" y="5" width="25" height="2" fill="#FF0000" />
+          
+          {/* Wings (Bottom) */}
+          <rect x="10" y="25" width="20" height="10" fill="#E0E0E0" />
+          <rect x="5" y="15" width="5" height="20" fill="#C0C0C0" />
+          <rect x="5" y="33" width="25" height="2" fill="#FF0000" />
+          
+          {/* Engines */}
+          <rect x="5" y="8" width="5" height="4" fill="#444" />
+          <rect x="5" y="28" width="5" height="4" fill="#444" />
+          
+          {/* Engine Glow */}
+          <rect x="0" y="9" width="5" height="2" fill="#00FFFF" className="animate-pulse" />
+          <rect x="0" y="29" width="5" height="2" fill="#00FFFF" className="animate-pulse" />
+        </svg>
+
+        {/* Continuous Laser Beams from Nose Tip */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          {/* Laser 1 */}
+          <motion.div
+            className="absolute top-[38px] left-[100px] h-[3px] rounded-full"
+            style={neonStyles.laser.green}
+            animate={{
+              width: ['0px', '150px', '50px', '0px'],
+              opacity: [0, 1, 1, 0],
+              x: [0, 100, 300, 400]
+            }}
+            transition={{
+              duration: 0.8,
+              repeat: Infinity,
+              ease: "linear",
+              repeatDelay: 0.1
+            }}
+          />
+          
+          {/* Laser 2 (Offset) */}
+          <motion.div
+            className="absolute top-[38px] left-[100px] h-[3px] rounded-full"
+            style={neonStyles.laser.cyan}
+            animate={{
+              width: ['0px', '150px', '50px', '0px'],
+              opacity: [0, 1, 1, 0],
+              x: [0, 100, 300, 400]
+            }}
+            transition={{
+              duration: 0.8,
+              repeat: Infinity,
+              ease: "linear",
+              delay: 0.4,
+              repeatDelay: 0.1
+            }}
+          />
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+export default XWingAnimation;
