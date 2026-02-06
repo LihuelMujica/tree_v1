@@ -1,15 +1,20 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { neonStyles } from './NeonGlow';
 
 function XWingAnimation() {
   const laserBursts = [
-    { color: 'green', top: '32px', delay: 0 },
-    { color: 'cyan', top: '32px', delay: 0.2 },
-    { color: 'green', top: '44px', delay: 0.1 },
-    { color: 'cyan', top: '44px', delay: 0.3 }
+    { top: '30px', delay: 0 },
+    { top: '30px', delay: 0.2 },
+    { top: '46px', delay: 0.1 },
+    { top: '46px', delay: 0.3 }
   ];
+
+  const laserStyle = {
+    background: 'linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,58,58,1) 45%, rgba(255,0,0,0) 100%)',
+    boxShadow: '0 0 10px #FF3B3B, 0 0 18px rgba(255,59,59,0.8)',
+    filter: 'brightness(1.6)'
+  };
 
   return (
     <div className="relative w-64 h-40 flex items-center justify-center">
@@ -65,20 +70,20 @@ function XWingAnimation() {
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           {laserBursts.map((laser, index) => (
             <motion.div
-              key={`${laser.color}-${index}`}
-              className="absolute left-[96px] h-[3px] rounded-full"
-              style={{ ...neonStyles.laser[laser.color], top: laser.top }}
+              key={`laser-${index}`}
+              className="absolute left-[92px] h-[4px] rounded-full"
+              style={{ ...laserStyle, top: laser.top }}
               animate={{
-                width: ['0px', '140px', '160px', '0px'],
+                width: ['0px', '120px', '160px', '0px'],
                 opacity: [0, 1, 1, 0],
-                x: [0, 30, 160, 220]
+                x: [0, 20, 140, 200]
               }}
               transition={{
-                duration: 0.7,
+                duration: 0.8,
                 repeat: Infinity,
                 ease: "linear",
                 delay: laser.delay,
-                repeatDelay: 0.3
+                repeatDelay: 0.25
               }}
             />
           ))}
