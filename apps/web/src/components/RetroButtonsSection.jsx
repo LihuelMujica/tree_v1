@@ -1,18 +1,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import buttonLinks from '../data/buttonLinks.json';
 
 function RetroButtonsSection() {
-  const buttons = [
-    { label: 'MY STORE', link: '#' },
-    { label: 'INSPIRATION', link: '#' },
-    { label: 'STOCKLIST', link: '#' },
-    { label: 'CONTACT', link: '#' },
-  ];
+  const { retroButtons } = buttonLinks;
 
   return (
     <div className="w-full max-w-md mx-auto flex flex-col gap-4 z-10">
-      {buttons.map((btn, index) => (
+      {retroButtons.map((btn, index) => (
         <motion.a
           key={btn.label}
           href={btn.link}
