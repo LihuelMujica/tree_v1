@@ -4,16 +4,12 @@ import { motion } from 'framer-motion';
 
 function XWingAnimation() {
   const laserBursts = [
-    { top: '30px', delay: 0 },
-    { top: '30px', delay: 0.2 },
-    { top: '46px', delay: 0.1 },
-    { top: '46px', delay: 0.3 }
+    { top: '22px', delay: 0 },
+    { top: '58px', delay: 0.15 }
   ];
 
   const laserStyle = {
-    background: 'linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,58,58,1) 45%, rgba(255,0,0,0) 100%)',
-    boxShadow: '0 0 12px #FF3B3B, 0 0 24px rgba(255,59,59,0.9)',
-    filter: 'brightness(2)'
+    background: '#FF3B3B'
   };
 
   return (
@@ -67,23 +63,23 @@ function XWingAnimation() {
         </svg>
 
         {/* Laser Bursts from the Cannons */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-20 mix-blend-screen">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-20">
           {laserBursts.map((laser, index) => (
             <motion.div
               key={`laser-${index}`}
               className="absolute left-[108px] h-[4px] rounded-full"
               style={{ ...laserStyle, top: laser.top }}
               animate={{
-                width: ['0px', '90px', '140px', '0px'],
-                opacity: [0, 1, 1, 0],
-                x: [0, 10, 120, 180]
+                width: ['0px', '120px', '0px'],
+                opacity: [0, 1, 0],
+                x: [0, 160, 220]
               }}
               transition={{
-                duration: 0.7,
+                duration: 0.6,
                 repeat: Infinity,
                 ease: "linear",
                 delay: laser.delay,
-                repeatDelay: 0.25
+                repeatDelay: 0.35
               }}
             />
           ))}
