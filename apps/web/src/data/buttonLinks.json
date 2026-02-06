@@ -1,9 +1,8 @@
 {
   "retroButtons": [
-    { "label": "MY STORE", "link": "#" },
-    { "label": "INSPIRATION", "link": "#" },
-    { "label": "STOCKLIST", "link": "#" },
-    { "label": "CONTACT", "link": "#" }
+    { "label": "PORFOLIO", "link": "https://lihuel.framer.ai/" },
+    { "label": "Dev Utils", "link": "https://lihuelmujica.github.io/utils/" },
+    { "label": "C A R E T A S", "link": "https://lihuelmujica.github.io/host/" }
   ],
   "retroSocialButtons": [
     { "label": "MY STORE", "color": "retroYellow", "hex": "#FFD700", "link": "#" },
