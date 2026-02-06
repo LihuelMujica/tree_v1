@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function SocialLinks() {
   const links = [
-    { name: 'GitHub', icon: Github, url: 'https://github.com', color: 'text-retroCyan', border: 'border-retroCyan', shadow: 'shadow-[0_0_15px_#00FFFF]' },
+    { name: 'GitHub', icon: Github, url: 'https://github.com/lihuelmujica', color: 'text-retroCyan', border: 'border-retroCyan', shadow: 'shadow-[0_0_15px_#00FFFF]' },
     { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com', color: 'text-retroMagenta', border: 'border-retroMagenta', shadow: 'shadow-[0_0_15px_#FF00FF]' },
     { name: 'Spotify', icon: Music, url: 'https://spotify.com', color: 'text-retroYellow', border: 'border-retroYellow', shadow: 'shadow-[0_0_15px_#FFD700]' },
     { name: 'Instagram', icon: Instagram, url: 'https://instagram.com', color: 'text-retroWhite', border: 'border-retroWhite', shadow: 'shadow-[0_0_15px_#FFFFFF]' },

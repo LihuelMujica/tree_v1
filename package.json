@@ -3,13 +3,13 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "concurrently --kill-others --raw \"npm run dev --prefix apps/web\"",
-		"build": "concurrently --raw \"npm run build --prefix apps/web\"",
-		"start": "concurrently --kill-others --raw",
-		"lint": "concurrently --raw \"npm run lint --prefix apps/web\""
+		"dev": "vite --host :: --port 3000",
+		"build": "vite build",
+		"start": "vite preview --host :: --port 3000",
+		"lint": "npm run lint --prefix apps/web"
 	},
 	"devDependencies": {
-		"concurrently": "^9.1.2"
+		"vite": "^4.4.5"
 	},
 	"workspaces": [
 		"apps/*"
