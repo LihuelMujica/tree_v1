@@ -5,10 +5,10 @@ import { neonStyles } from './NeonGlow';
 
 function XWingAnimation() {
   const laserBursts = [
-    { color: 'green', top: '30px', delay: 0 },
-    { color: 'cyan', top: '30px', delay: 0.2 },
-    { color: 'green', top: '46px', delay: 0.1 },
-    { color: 'cyan', top: '46px', delay: 0.3 }
+    { color: 'green', top: '32px', delay: 0 },
+    { color: 'cyan', top: '32px', delay: 0.2 },
+    { color: 'green', top: '44px', delay: 0.1 },
+    { color: 'cyan', top: '44px', delay: 0.3 }
   ];
 
   return (
@@ -66,15 +66,15 @@ function XWingAnimation() {
           {laserBursts.map((laser, index) => (
             <motion.div
               key={`${laser.color}-${index}`}
-              className="absolute left-[100px] w-[140px] h-[3px] rounded-full origin-left"
+              className="absolute left-[96px] h-[3px] rounded-full"
               style={{ ...neonStyles.laser[laser.color], top: laser.top }}
               animate={{
-                scaleX: [0, 1, 1, 0],
+                width: ['0px', '140px', '160px', '0px'],
                 opacity: [0, 1, 1, 0],
-                x: [0, 40, 160, 220]
+                x: [0, 30, 160, 220]
               }}
               transition={{
-                duration: 0.65,
+                duration: 0.7,
                 repeat: Infinity,
                 ease: "linear",
                 delay: laser.delay,
