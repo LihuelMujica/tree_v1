@@ -1,11 +1,23 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { neonStyles } from './NeonGlow';
 
 function XWingAnimation() {
+  const laserBursts = [
+    { top: '30px', delay: 0 },
+    { top: '30px', delay: 0.2 },
+    { top: '46px', delay: 0.1 },
+    { top: '46px', delay: 0.3 }
+  ];
+
+  const laserStyle = {
+    background: 'linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,58,58,1) 45%, rgba(255,0,0,0) 100%)',
+    boxShadow: '0 0 12px #FF3B3B, 0 0 24px rgba(255,59,59,0.9)',
+    filter: 'brightness(2)'
+  };
+
   return (
-    <div className="relative w-64 h-40 flex items-center justify-center">
+    <div className="relative w-64 h-40 flex items-center justify-center overflow-visible">
       {/* Floating Container */}
       <motion.div
         animate={{
@@ -54,42 +66,27 @@ function XWingAnimation() {
           <rect x="0" y="29" width="5" height="2" fill="#00FFFF" className="animate-pulse" />
         </svg>
 
-        {/* Continuous Laser Beams from Nose Tip */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          {/* Laser 1 */}
-          <motion.div
-            className="absolute top-[38px] left-[100px] h-[3px] rounded-full"
-            style={neonStyles.laser.green}
-            animate={{
-              width: ['0px', '150px', '50px', '0px'],
-              opacity: [0, 1, 1, 0],
-              x: [0, 100, 300, 400]
-            }}
-            transition={{
-              duration: 0.8,
-              repeat: Infinity,
-              ease: "linear",
-              repeatDelay: 0.1
-            }}
-          />
-          
-          {/* Laser 2 (Offset) */}
-          <motion.div
-            className="absolute top-[38px] left-[100px] h-[3px] rounded-full"
-            style={neonStyles.laser.cyan}
-            animate={{
-              width: ['0px', '150px', '50px', '0px'],
-              opacity: [0, 1, 1, 0],
-              x: [0, 100, 300, 400]
-            }}
-            transition={{
-              duration: 0.8,
-              repeat: Infinity,
-              ease: "linear",
-              delay: 0.4,
-              repeatDelay: 0.1
-            }}
-          />
+        {/* Laser Bursts from the Cannons */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-20 mix-blend-screen">
+          {laserBursts.map((laser, index) => (
+            <motion.div
+              key={`laser-${index}`}
+              className="absolute left-[108px] h-[4px] rounded-full"
+              style={{ ...laserStyle, top: laser.top }}
+              animate={{
+                width: ['0px', '90px', '140px', '0px'],
+                opacity: [0, 1, 1, 0],
+                x: [0, 10, 120, 180]
+              }}
+              transition={{
+                duration: 0.7,
+                repeat: Infinity,
+                ease: "linear",
+                delay: laser.delay,
+                repeatDelay: 0.25
+              }}
+            />
+          ))}
         </div>
       </motion.div>
     </div>
